@@ -1,0 +1,19 @@
+service: zeebe-deploy-function
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: java8
+  region: eu-central-1
+
+package:
+  artifact: target/aws-lambda-deploy-function.jar
+
+functions:
+  deploytozeebe:
+    handler: org.camunda.bsb.ZeebeDeployFunction
+    events:
+      - http:
+          path: deploytozeebe
+          method: post
