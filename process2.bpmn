@@ -25,6 +25,16 @@
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1ap2yfc" sourceRef="Task_17ed0jo" targetRef="EndEvent_1w919yi" />
     <bpmn:serviceTask id="Task_17ed0jo" name="Do more">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="doMore" />
+        <zeebe:taskHeaders>
+          <zeebe:header key="foo" value="PT15M" />
+        </zeebe:taskHeaders>
+        <zeebe:ioMapping>
+          <zeebe:input source="$.orderItems" target="$.orderItems" />
+          <zeebe:output source="$.orderStatus" target="$.orderStatus" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0yjup2o</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ap2yfc</bpmn:outgoing>
     </bpmn:serviceTask>
