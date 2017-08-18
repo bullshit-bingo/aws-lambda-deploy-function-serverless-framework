@@ -50,8 +50,15 @@
         <dependency>
             <groupId>io.zeebe</groupId>
             <artifactId>zeebe-client-java</artifactId>
-            <version>0.1.1</version>
+            <version>0.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <!-- http://docs.aws.amazon.com/lambda/latest/dg/java-create-jar-pkg-maven-no-ide.html -->
